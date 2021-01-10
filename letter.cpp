@@ -1,6 +1,6 @@
 #include "letter.h"
 
-Letter::Letter(string lastName, string firstName, int age, string city, string envelopeColor, string wishList)
+Letter::Letter(string lastName, string firstName, int age, string city, string envelopeColor, vector<string> wishList)
 {
     this->lastName = lastName;
     this->firstName = firstName;
@@ -8,6 +8,11 @@ Letter::Letter(string lastName, string firstName, int age, string city, string e
     this->city = city;
     this->envelopeColor = envelopeColor;
     this->wishList = wishList;
+    this->allocatedBudget = 0;
+    this->embersNumber = 0;
+    this->lollipopsNumber = 0;
+    this->giftList = {};
+    this->giftPacked = false;
 };
 
 Letter::~Letter(){};
@@ -37,7 +42,7 @@ string Letter::getEnvelopeColor() const
     return this->envelopeColor;
 }
 
-string Letter::getWishList() const
+vector<string> Letter::getWishList() const
 {
     return this->wishList;
 }
@@ -52,12 +57,12 @@ void Letter::setAllocatedBudget(int allocatedBudget)
     this->allocatedBudget = allocatedBudget;
 }
 
-string Letter::getGiftList() const
+vector<Toy> Letter::getGiftList() const
 {
     return this->giftList;
 }
 
-void Letter::setGiftList(string giftList)
+void Letter::setGiftList(vector<Toy> giftList)
 {
     this->giftList = giftList;
 }
@@ -80,4 +85,8 @@ int Letter::getEmbersNumber() const
 void Letter::setEmbersNumber(int embersNumber)
 {
     this->embersNumber = embersNumber;
+}
+void Letter::setGiftPacked(bool giftPacked)
+{
+    this->giftPacked = giftPacked;
 }

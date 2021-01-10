@@ -2,6 +2,8 @@
 #define LETTER_H
 
 #include <iostream>
+#include <vector>
+#include "toy.h"
 using namespace std;
 
 class Letter
@@ -12,17 +14,18 @@ private:
     int age;
     string city;
     string envelopeColor;
-    string wishList;
+    vector<string> wishList;
     int allocatedBudget;
-    string giftList;
+    vector<Toy> giftList;
     int lollipopsNumber;
     int embersNumber;
+    bool giftPacked;
 
 public:
     //default constructor
     Letter();
     //constructor overloading
-    Letter(string lastName, string firstName, int age, string city, string envelopeColor, string wishList);
+    Letter(string lastName, string firstName, int age, string city, string envelopeColor, vector<string> wishList);
     //destructor
     ~Letter();
 
@@ -32,17 +35,18 @@ public:
     int getAge() const;
     string getCity() const;
     string getEnvelopeColor() const;
-    string getWishList() const;
+    vector<string> getWishList() const;
     int getAllocatedBudget() const;
     int getLollipopsNumber() const;
     int getEmbersNumber() const;
-    string getGiftList() const;
+    vector<Toy> getGiftList() const;
 
     // setters
     void setAllocatedBudget(int budget);
     void setLollipopsNumber(int lollipopsNumber);
     void setEmbersNumber(int embersNumber);
-    void setGiftList(string gifts);
+    void setGiftList(vector<Toy> gifts);
+    void setGiftPacked(bool giftPacked);
 };
 
 #endif
