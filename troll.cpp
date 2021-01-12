@@ -5,71 +5,41 @@
 
 using namespace std;
 
-vector<Toy> Troll::getToyList()
+int Troll::packGifts(vector<Letter> *letters)
 {
-    return this->toyList;
+    int girls = 0;
+
+    for (int i = 0; i < lettersNumber; i++)
+    {
+        (*letters)[i].setGiftPacked(true);
+        if ((*letters)[i].getEnvelopeColor().compare("pink") == 0)
+        {
+            girls++;
+        }
+    }
+    return girls;
+}
+int Troll::addEmbers(vector<Letter> *letters)
+{
+    int embers = 0;
+    vector<bool> isGood = this->getIsGood();
+    for (int i = 0; i < lettersNumber; i++)
+    {
+
+        if (!isGood[i])
+        {
+            (*letters)[i].setEmbersNumber(1);
+            embers++;
+        }
+    }
+    return embers;
 }
 
-void Troll::setToyList(vector<Toy> toyList)
+vector<Toy> Troll::getGiftList()
 {
-    this->toyList = toyList;
+    return this->giftList;
 }
-
-int Troll::getGirlsPacks()
+void Troll::setGiftList(vector<Toy> giftList)
 {
-    return this->girlsPacks;
+    this->giftList = giftList;
 }
-
-void Troll::setGirlsPacks(int girlsPacks)
-{
-    this->girlsPacks = girlsPacks;
-}
-
-int Troll::getBoysPacks()
-{
-    return this->boysPacks;
-}
-
-void Troll::setBoysPacks(int boysPacks)
-{
-    this->boysPacks = boysPacks;
-}
-
-int Troll::getEmbers()
-{
-    return this->embers;
-}
-
-void Troll::setEmbers(int embers)
-{
-    this->embers = embers;
-}
-
-// int Troll::trollPack()
-// {
-//     int girls = 0;
-
-//     for (int i = 0; i < lettersNumber; i++)
-//     {
-//         (*letters)[i].setGiftPacked(true);
-//         if ((*letters)[i].getEnvelopeColor().compare("pink") == 0)
-//         {
-//             girls++;
-//         }
-//     }
-//     return girls;
-// }
-// int Troll::trollAddEmbers()
-// {
-//     int embers = 0;
-//     for (int i = 0; i < lettersNumber; i++)
-//     {
-
-//         if ((*letters)[i].getAllocatedBudget() == 10)
-//         {
-//             (*letters)[i].setEmbersNumber(1);
-//             embers++;
-//         }
-//     }
-//     return embers;
-// }

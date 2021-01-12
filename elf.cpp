@@ -4,7 +4,6 @@
 
 Elf::Elf()
 {
-    this->isGood = createIsGoodList();
     this->toyList = createToyList();
 }
 void Elf::allocateBudget(vector<Letter> *letters)
@@ -143,12 +142,25 @@ vector<string> Elf::cities(vector<Letter> letters)
     return cities;
 }
 
-vector<Toy> Elf::getGifts()
+vector<bool> Elf::getIsGood()
 {
-    return this->gifts;
+    return this->isGood;
 }
 
-void Elf::setGifts(vector<Toy> gifts)
+vector<Toy> Elf::getGiftList(vector<Letter> letters)
 {
-    this->gifts = gifts;
+    vector<Toy> giftList;
+
+    for (int i = 0; i < lettersNumber; i++)
+    {
+
+        vector<Toy> individualGiftList = letters[i].getGiftList();
+        int n = individualGiftList.size();
+        for (int j = 0; j < n; j++)
+        {
+            giftList.push_back(individualGiftList[j]);
+        }
+    }
+
+    return giftList;
 }

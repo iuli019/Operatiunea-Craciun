@@ -3,7 +3,27 @@
 
 using namespace std;
 
-float extraCosts(int lollipops, int embers)
+void MrsSanta::extraCost()
 {
-    return lollipops + embers * 0.5;
+    cout << "Extra cost: " << lollipopsNumber + embersNumber * 0.5 << endl;
+}
+
+void MrsSanta::setLollipopsNumber(int lollipopsNumber)
+{
+    this->lollipopsNumber = lollipopsNumber;
+}
+
+void MrsSanta::setEmbersNumber(int embersNumber)
+{
+    this->embersNumber = embersNumber;
+}
+
+int MrsSanta::getLollipopsNumber()
+{
+    return this->lollipopsNumber;
+}
+
+int MrsSanta::getEmbersNumber()
+{
+    return this->embersNumber;
 }

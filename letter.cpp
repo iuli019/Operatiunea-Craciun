@@ -90,3 +90,12 @@ void Letter::setGiftPacked(bool giftPacked)
 {
     this->giftPacked = giftPacked;
 }
+void Letter::print()
+{
+    cout << firstName << " " << lastName << ": ";
+    for (int i = 0; i < giftList.size(); i++)
+    {
+        cout << giftList[i].getName() << " ";
+    }
+    cout << endl;
+}

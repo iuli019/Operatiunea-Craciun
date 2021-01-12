@@ -8,10 +8,9 @@ using namespace std;
 
 class Elf
 {
-public:
-    vector<bool> isGood;
+private:
     vector<Toy> toyList;
-    vector<Toy> gifts;
+    vector<bool> isGood = {true, false, true, false, true};
 
 public:
     Elf();
@@ -19,9 +18,8 @@ public:
     void chooseGifts(vector<Letter> *letters);
     int lollipops(vector<Letter> letters);
     vector<string> cities(vector<Letter> letters);
-    void passGiftListToTroll();
-    vector<Toy> getGifts();
-    void setGifts(vector<Toy> gifts);
+    vector<bool> getIsGood();
+    vector<Toy> getGiftList(vector<Letter> letters);
 };
 
 #endif

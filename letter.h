@@ -29,6 +29,8 @@ public:
     //destructor
     ~Letter();
 
+    void print();
+
     // getters
     string getLastName() const;
     string getFirstName() const;

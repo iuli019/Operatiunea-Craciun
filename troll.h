@@ -2,28 +2,22 @@
 #define TROLL_H
 #include <iostream>
 #include <vector>
+#include "toy.h"
+#include "letter.h"
+#include "elf.h"
 using namespace std;
 
-class Troll
+class Troll : public Elf
 {
 private:
-    vector<Toy> toyList;
-    int girlsPacks;
-    int boysPacks;
-    int embers;
+    vector<Toy> giftList;
 
 public:
-    int trollPack();
-    int trollAddEmbers();
+    int packGifts(vector<Letter> *letters);
+    int addEmbers(vector<Letter> *letters);
 
-    vector<Toy> getToyList();
-    void setToyList(vector<Toy> toyList);
-    int getGirlsPacks();
-    void setGirlsPacks(int girlsPacks);
-    int getBoysPacks();
-    void setBoysPacks(int boysPacks);
-    int getEmbers();
-    void setEmbers(int embers);
+    vector<Toy> getGiftList();
+    void setGiftList(vector<Toy> giftList);
 };
 
 #endif
