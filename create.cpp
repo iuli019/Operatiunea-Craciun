@@ -1,10 +1,10 @@
 #include "create.h"
 
 int lettersNumber = 5;
-
 Toy defaultGift100("bigLegoSet", 100);
 Toy defaultGift10("coloringBook", 10);
 
+//create the gift stock
 vector<Toy> createToyList()
 {
     Toy doll("doll", 20);
@@ -25,12 +25,13 @@ vector<Toy> createToyList()
     return toysList;
 }
 
+// create letters
 vector<Letter> createLetterList()
 {
     Letter letter1("Popescu", "Irina", 9, "Analalava", "pink", {"doll", "lego", "cards"});      // ok + lolli
     Letter letter2("Semenescu", "Paul", 5, "Antsalova", "blue", {"nintendo", "lego", "cards"}); // default 10
     Letter letter3("Adam", "Carol", 7, "Antananarivo", "blue", {"nintendo", "lego", "cards"});  // default 100
-    Letter letter4("Dumitrescu", "Ana", 8, "Manja", "pink", {"blah", "blah", "bl"});            // nimic pe inventar
+    Letter letter4("Dumitrescu", "Ana", 8, "Sainte Marie", "pink", {"blah", "blah", "bl"});     // nimic pe inventar
     Letter letter5("Ene", "Simona", 10, "Tsaratanana", "pink", {"doll", "lego", "bike"});       // doar 2 jucarii + lolli
 
     vector<Letter> letters = {letter1, letter2, letter3, letter4, letter5};

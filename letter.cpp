@@ -90,6 +90,8 @@ void Letter::setGiftPacked(bool giftPacked)
 {
     this->giftPacked = giftPacked;
 }
+
+// print name and gift method
 void Letter::print()
 {
     cout << firstName << " " << lastName << ": ";

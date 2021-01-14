@@ -6,6 +6,8 @@ Toy::Toy(string name, int price)
     this->price = price;
 }
 
+Toy::~Toy(){};
+
 string Toy::getName() const
 {
     return this->name;

@@ -2,6 +2,7 @@
 #define TOY_H
 
 #include <iostream>
+
 using namespace std;
 
 class Toy
@@ -12,7 +13,7 @@ private:
 
 public:
     Toy(string name, int price);
-
+    ~Toy();
     string getName() const;
     int getPrice() const;
 };
